@@ -4,3 +4,4 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+bevy_ecs = { version = "0.16.0-rc.5", default-features = false }
