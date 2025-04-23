@@ -1,3 +1,5 @@
+//! TODO
+
 use bevy_ecs::{
     entity::Entity, hierarchy::ChildOf, observer::Observer, spawn::SpawnableList, world::World,
 };
@@ -14,18 +16,4 @@ impl SpawnableList<ChildOf> for SpawnObserver {
     fn size_hint(&self) -> usize {
         0
     }
-}
-
-#[doc(hidden)]
-pub mod __macro {
-    pub use bevy_ecs::{hierarchy::Children, observer::Observer};
-}
-
-#[macro_export]
-macro_rules! observers {
-    [$($observer:expr),* $(,)?] => {
-        $crate::__macro::Children::spawn(
-            ($($crate::Observe($crate::__macro::Observer::new($observer))),*)
-        )
-    };
 }
