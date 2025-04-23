@@ -2,7 +2,7 @@
 //! with the help of [`SpawnObserver`].
 
 use bevy::{ecs::system::IntoObserverSystem, prelude::*};
-use bevy_tmp_spawn_observer::SpawnObserver;
+use bevy_spawn_observer::SpawnObserver;
 
 fn main() -> AppExit {
     App::new()
@@ -53,7 +53,7 @@ fn button<E: Event, B: Bundle, M, I: IntoObserverSystem<E, B, M>>(
                 TextFont::from_font_size(40.0),
                 TextColor(Color::srgb(0.1, 0.1, 0.2)),
             )),
-            SpawnObserver(Observer::new(action)),
+            SpawnObserver::new(action),
         )),
     )
 }

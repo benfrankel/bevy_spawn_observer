@@ -1,9 +1,9 @@
 [package]
-name = "bevy_tmp_spawn_observer"
+name = "bevy_spawn_observer"
 version = "0.1.0"
 edition = "2024"
-description = "TODO"
-repository = "https://github.com/benfrankel/bevy_tmp_spawn_observer"
+description = "Add observers to your bundles"
+repository = "https://github.com/benfrankel/bevy_spawn_observer"
 license = "MIT OR Apache-2.0"
 keywords = ["ecs", "game", "bevy"]
 
