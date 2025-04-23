@@ -1,5 +1,5 @@
-//! This crate provides [`SpawnObserver`], a custom [`SpawnableList`] for spawning observers,
-//! which enables you to add observers to your bundles.
+//! This crate provides [`SpawnObserver`], a custom [`SpawnableList`] enabling you
+//! to add observers to your bundles.
 //!
 //! ```rust
 //! use bevy::prelude::*;
@@ -15,8 +15,7 @@
 //! }
 //! ```
 //!
-//! Check out a [full example](https://github.com/benfrankel/bevy_spawn_observer/blob/main/examples/buttons.rs)
-//! of how this looks in practice.
+//! See a full example [here](https://github.com/benfrankel/bevy_spawn_observer/blob/main/examples/buttons.rs).
 
 use bevy_ecs::{
     bundle::Bundle, entity::Entity, event::Event, hierarchy::ChildOf, observer::Observer,
