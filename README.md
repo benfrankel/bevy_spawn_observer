@@ -12,11 +12,24 @@ enabling you to add observers to your bundles.
 use bevy::prelude::*;
 use bevy_spawn_observer::SpawnObserver;
 
+// With `bevy_spawn_observer`:
 fn button() -> impl Bundle {
     (
         Button,
         Children::spawn(SpawnObserver::new(|_: Trigger<Pointer<Click>>| {
             info!("You clicked me!");
+        })),
+    )
+}
+
+// Without `bevy_spawn_observer`:
+fn button() -> impl Bundle {
+    (
+        Node::default(),
+        Children::spawn(SpawnWith::new(|parent: &mut ChildSpawner| {
+            parent.spawn(Button).observe(|_: Trigger<Pointer<Click>>| {
+                info!("You clicked me!");
+            });
         })),
     )
 }
@@ -28,7 +41,7 @@ See a full example [here](https://github.com/benfrankel/bevy_spawn_observer/blob
 
 | `bevy` version | `bevy_spawn_observer` version |
 | -------------- | ----------------------------- |
-| 0.16           | 0.1 (unreleased)              |
+| 0.16           | 0.1                           |
 
 # License
 

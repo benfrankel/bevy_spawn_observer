@@ -5,11 +5,24 @@
 //! use bevy::prelude::*;
 //! use bevy_spawn_observer::SpawnObserver;
 //!
+//! // With `bevy_spawn_observer`:
 //! fn button() -> impl Bundle {
 //!     (
 //!         Button,
 //!         Children::spawn(SpawnObserver::new(|_: Trigger<Pointer<Click>>| {
 //!             info!("You clicked me!");
+//!         })),
+//!     )
+//! }
+//!
+//! // Without `bevy_spawn_observer`:
+//! fn button() -> impl Bundle {
+//!     (
+//!         Node::default(),
+//!         Children::spawn(SpawnWith::new(|parent: &mut ChildSpawner| {
+//!             parent.spawn(Button).observe(|_: Trigger<Pointer<Click>>| {
+//!                 info!("You clicked me!");
+//!             });
 //!         })),
 //!     )
 //! }

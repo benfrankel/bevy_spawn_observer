@@ -35,10 +35,12 @@ fn buttons() -> impl Bundle {
     )
 }
 
-fn button<E: Event, B: Bundle, M, I: IntoObserverSystem<E, B, M>>(
-    text: impl Into<String>,
-    action: I,
-) -> impl Bundle {
+fn button<E, B, M, I>(text: impl Into<String>, action: I) -> impl Bundle
+where
+    E: Event,
+    B: Bundle,
+    I: IntoObserverSystem<E, B, M>,
+{
     (
         Button,
         Node {
