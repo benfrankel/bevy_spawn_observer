@@ -9,11 +9,11 @@ a custom [`SpawnableList`](https://docs.rs/bevy/latest/bevy/ecs/spawn/trait.Spaw
 enabling you to add observers to your bundles.
 
 ```rust
-use bevy::prelude::*;
+use bevy::{ecs::spawn::SpawnWith, prelude::*};
 use bevy_spawn_observer::SpawnObserver;
 
 // With `bevy_spawn_observer`:
-fn button() -> impl Bundle {
+fn button_new() -> impl Bundle {
     (
         Button,
         Children::spawn(SpawnObserver::new(|_: Trigger<Pointer<Click>>| {
@@ -23,7 +23,7 @@ fn button() -> impl Bundle {
 }
 
 // Without `bevy_spawn_observer`:
-fn button() -> impl Bundle {
+fn button_old() -> impl Bundle {
     (
         Node::default(),
         Children::spawn(SpawnWith::new(|parent: &mut ChildSpawner| {
