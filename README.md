@@ -26,7 +26,7 @@ fn button_new() -> impl Bundle {
 fn button_old() -> impl Bundle {
     (
         Node::default(),
-        Children::spawn(SpawnWith::new(|parent: &mut ChildSpawner| {
+        Children::spawn(SpawnWith(|parent: &mut ChildSpawner| {
             parent.spawn(Button).observe(|_: Trigger<Pointer<Click>>| {
                 info!("You clicked me!");
             });
