@@ -30,6 +30,8 @@
 //!
 //! See a full example [here](https://github.com/benfrankel/bevy_spawn_observer/blob/main/examples/buttons.rs).
 
+#![no_std]
+
 use bevy_ecs::{
     bundle::Bundle, entity::Entity, event::Event, hierarchy::ChildOf, observer::Observer,
     spawn::SpawnableList, system::IntoObserverSystem, world::World,

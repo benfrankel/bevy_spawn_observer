@@ -18,9 +18,12 @@ bevy = { version = "0.16", default-features = false, features = [
     "bevy_winit",
     "x11",
     "default_font",
-    "multi_threaded",
-    "std",
 ] }
 
 [lints.rust]
 missing_docs = "deny"
+
+[lints.clippy]
+std_instead_of_core = "warn"
+std_instead_of_alloc = "warn"
+alloc_instead_of_core = "warn"
