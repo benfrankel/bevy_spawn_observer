@@ -31,6 +31,8 @@
 //! See a full example [here](https://github.com/benfrankel/bevy_spawn_observer/blob/main/examples/buttons.rs).
 
 #![no_std]
+// Support configuring Bevy lints within code.
+#![cfg_attr(bevy_lint, feature(register_tool), register_tool(bevy))]
 
 use bevy_ecs::{
     bundle::Bundle, entity::Entity, event::Event, hierarchy::ChildOf, observer::Observer,
