@@ -35,16 +35,16 @@
 #![cfg_attr(bevy_lint, feature(register_tool), register_tool(bevy))]
 
 use bevy_ecs::{
-    bundle::Bundle, entity::Entity, event::Event, hierarchy::ChildOf, observer::Observer,
+    bundle::Bundle, entity::Entity, event::Event, observer::Observer, relationship::Relationship,
     spawn::SpawnableList, system::IntoObserverSystem, world::World,
 };
 
 /// A [`SpawnableList`] that spawns an [`Observer`] as a child entity.
 pub struct SpawnObserver(pub Observer);
 
-impl SpawnableList<ChildOf> for SpawnObserver {
+impl<R: Relationship> SpawnableList<R> for SpawnObserver {
     fn spawn(self, world: &mut World, entity: Entity) {
-        world.spawn(self.0.with_entity(entity));
+        world.spawn((R::from(entity), self.0.with_entity(entity)));
     }
 
     // A size hint is not important for this simple use case, so return 0.
