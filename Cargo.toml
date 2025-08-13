@@ -1,6 +1,6 @@
 [package]
 name = "bevy_spawn_observer"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 description = "Add observers to your bundles"
 repository = "https://github.com/benfrankel/bevy_spawn_observer"
