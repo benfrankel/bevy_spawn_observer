@@ -1,6 +1,6 @@
 [package]
 name = "bevy_spawn_observer"
-version = "0.1.1"
+version = "0.2.0"
 edition = "2024"
 description = "Add observers to your bundles"
 repository = "https://github.com/benfrankel/bevy_spawn_observer"
@@ -8,10 +8,11 @@ license = "MIT OR Apache-2.0"
 keywords = ["ecs", "game", "bevy"]
 
 [dependencies]
-bevy_ecs = { version = "0.16", default-features = false }
+bevy_ecs = { version = "0.17", default-features = false }
+bevy_ptr = { version = "0.17", default-features = false }
 
 [dev-dependencies]
-bevy = { version = "0.16", default-features = false, features = [
+bevy = { version = "0.17", default-features = false, features = [
     "bevy_log",
     "bevy_ui",
     "bevy_ui_picking_backend",

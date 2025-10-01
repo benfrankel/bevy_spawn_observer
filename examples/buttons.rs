@@ -28,9 +28,9 @@ fn buttons() -> impl Bundle {
             ..default()
         },
         children![
-            button("Click me!", on_click_rotate_hue),
-            button("Click me!", on_click_rotate_hue),
-            button("Click me!", on_click_rotate_hue),
+            button("Click me!", rotate_hue),
+            button("Click me!", rotate_hue),
+            button("Click me!", rotate_hue),
         ],
     )
 }
@@ -60,11 +60,8 @@ where
     )
 }
 
-fn on_click_rotate_hue(
-    trigger: Trigger<Pointer<Click>>,
-    mut color_query: Query<&mut BackgroundColor>,
-) {
-    if let Ok(mut color) = color_query.get_mut(trigger.target()) {
+fn rotate_hue(click: On<Pointer<Click>>, mut color_query: Query<&mut BackgroundColor>) {
+    if let Ok(mut color) = color_query.get_mut(click.entity) {
         color.0 = color.0.rotate_hue(30.0);
     }
 }

@@ -125,5 +125,5 @@ jobs:
       - name: Run tests
         run: |
           cargo test --workspace --all-features --all-targets
-          # TODO: Workaround for https://github.com/rust-lang/cargo/issues/6669
+          # TODO: Workaround for <https://github.com/rust-lang/cargo/issues/6669>.
           cargo test --workspace --all-features --doc
