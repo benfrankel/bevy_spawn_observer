@@ -9,7 +9,7 @@
 //! fn button_new() -> impl Bundle {
 //!     (
 //!         Button,
-//!         Children::spawn(SpawnObserver::new(|_: Trigger<Pointer<Click>>| {
+//!         Children::spawn(SpawnObserver::new(|_: On<Pointer<Click>>| {
 //!             info!("You clicked me!");
 //!         })),
 //!     )
@@ -20,7 +20,7 @@
 //!     (
 //!         Node::default(),
 //!         Children::spawn(SpawnWith(|parent: &mut ChildSpawner| {
-//!             parent.spawn(Button).observe(|_: Trigger<Pointer<Click>>| {
+//!             parent.spawn(Button).observe(|_: On<Pointer<Click>>| {
 //!                 info!("You clicked me!");
 //!             });
 //!         })),
