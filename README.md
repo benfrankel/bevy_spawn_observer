@@ -5,10 +5,11 @@
 [![License](https://img.shields.io/badge/license-MIT%2FApache-blue.svg)](https://github.com/benfrankel/bevy_spawn_observer)
 
 > [!WARNING]
-> This crate will stop being maintained after a final update to Bevy 0.18 in the future.
+> This crate is no longer maintained and will not be updated to new versions of Bevy past 0.18.
 > 
 > You can already use the experimental [`bevy::ui_widgets::observe`](https://docs.rs/bevy/latest/bevy/ui_widgets/fn.observe.html)
-> in 0.17, and a proper upstream solution is planned for 0.18.
+> since 0.17, and a proper upstream solution is expected to land at some point
+> (see [#14204](https://github.com/bevyengine/bevy/issues/14204) and [#17607](https://github.com/bevyengine/bevy/issues/17607)).
 
 This crate provides [`SpawnObserver`](https://docs.rs/bevy_spawn_observer/latest/bevy_spawn_observer/struct.SpawnObserver.html),
 a custom [`SpawnableList`](https://docs.rs/bevy/latest/bevy/ecs/spawn/trait.SpawnableList.html)
@@ -47,6 +48,7 @@ See a full example [here](https://github.com/benfrankel/bevy_spawn_observer/blob
 
 | `bevy` version | `bevy_spawn_observer` version |
 | -------------- | ----------------------------- |
+| 0.18           | 0.3                           |
 | 0.17           | 0.2                           |
 | 0.16           | 0.1                           |
 

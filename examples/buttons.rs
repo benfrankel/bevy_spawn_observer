@@ -45,9 +45,9 @@ where
         Button,
         Node {
             padding: UiRect::all(Val::Px(20.0)),
+            border_radius: BorderRadius::MAX,
             ..default()
         },
-        BorderRadius::MAX,
         BackgroundColor(Color::srgb(0.0, 0.7, 0.9)),
         Children::spawn((
             Spawn((
